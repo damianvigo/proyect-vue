@@ -1,20 +1,16 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>{{ texto }}</h2>
-    <div style="background: #ccc">
-    <MiComponente></MiComponente>
-    </div>
-  </div>
+  <section id="content">
+    <h2 class="subheader">{{ texto }}</h2>
+  </section>
 </template>
 
 <script>
-import MiComponente from './MiComponente.vue';
+
 
 export default {
   name: 'HelloWorld',
   components: {
-    MiComponente
+
   },
   props: {
     msg: String
