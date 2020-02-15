@@ -81,6 +81,22 @@ body {
   margin-right: 15px;
 }
 
+.yeargreen {
+  background: green !important;
+  color: white !important;
+  padding: 10px !important; 
+  width: 111px !important;
+  text-align: center !important;
+}
+
+.yearred {
+  background: red !important;
+  color: white !important;
+  padding: 10px !important; 
+  width: 111px !important;
+  text-align: center !important;
+}
+
 #menu a {
   text-decoration: none;
   color: #444;
@@ -90,6 +106,21 @@ body {
 #menu a:hover,
 #menu .active {
   color: #078025;
+}
+
+.alert-danger-provisional {
+  color:red; 
+  font-weight:bold;
+}
+
+.alert-purple-provisional {
+  color: purple; 
+  font-weight:bold;
+}
+
+.alert-success-provisional {
+  color:green; 
+  font-weight:bold;
 }
 
 .clearfix {
