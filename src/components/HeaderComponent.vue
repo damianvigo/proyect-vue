@@ -24,7 +24,7 @@
             <router-link :to="{name: 'pagina', params: {id: 'Soy el valor del parametro'}}" active-class="active">Página 1</router-link> <!-- Pasando un objeto. Directiva de atributo // :to="" -->
           </li>
           <li>
-            <router-link to="/peliculas" active-class="active">Página 2</router-link>
+            <router-link to="/peliculas" active-class="active">Peliculas</router-link>
           </li>
         </ul>
       </nav>
