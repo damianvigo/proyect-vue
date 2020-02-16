@@ -4,6 +4,12 @@
       <section id="content">
         <h2 class="subheader">Peliculas</h2>
 
+        <div class="mis-datos" v-if="misDatos"> <!-- si existen mis datos, mostrarlos. -->
+          <p v-html="misDatos"></p>
+          <br/>
+          {{web | mayusculas | concatenaYear('Este es el mejor año')}} <!-- filtro -->
+        </div>
+
         <div class="favorita" v-if="favorita">
           <h2>La pelicula Marcada es:</h2>
           <h2>{{favorita.title}}</h2>
@@ -44,9 +50,32 @@ export default {
       this.favorita = favorita;
     }
   },
+  filters: {
+    mayusculas(value) {
+      return value.toUpperCase();
+    },
+    concatenaYear(value, message) {
+      var date = new Date();
+      return value + ' ' + date.getFullYear() + ' ' + message;
+    }
+  },
+  computed: {
+    peliculasMayuscula() {
+    var peliculasMod = this.peliculas; 
+      for(var i = 0; i < this.peliculas.length; i++) {
+        peliculasMod[i].title = peliculasMod[i].title.toUpperCase();
+      }
+      return peliculasMod;
+    },
+    misDatos() {
+      return this.nombre + ' ' + this.apellido + '<br/>' + '<strong>Sitio web:</strong> ' + this.web;
+    }
+  },
   data() {
     return {
-      
+      nombre: 'Damian',
+      apellido: 'Vigo',
+      web: 'https://damiandanielvigo.com',
       favorita: null,
       
       peliculas: [
