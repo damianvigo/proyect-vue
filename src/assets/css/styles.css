@@ -237,6 +237,22 @@ body {
   background: green;
 }
 
+.image-small {
+  width: 150px;
+}
+
+.btn-warning {
+  background: rgba(255, 230, 0, 0.651);
+  color: #000;
+  text-align: center;
+}
+
+.btn-danger {
+  background: rgb(128, 0, 0);
+  color: #fff !important;
+  text-align: center;
+}
+
 .btn-success:hover {
   background: black;
 }
@@ -256,6 +272,7 @@ body {
 }
 
 input[type='text'],
+input[type='file'],
 textarea {
   width: 100%;
   min-height: 30px;
@@ -267,6 +284,7 @@ textarea {
 }
 
 input[type='text']:focus,
+input[type='file']:focus,
 textarea:focus {
   box-shadow: 0px 0px 5px #444 inset;
 }
