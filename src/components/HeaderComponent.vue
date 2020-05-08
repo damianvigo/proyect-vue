@@ -5,7 +5,7 @@
       <div id="logo">
         <img src="../assets/logo.png" class="app-logo" alt="logo" />
         <span id="brand">
-          <strong>Curso</strong>Vue
+          <strong>Vue</strong>
         </span>
       </div>
       <!-- MENU -->
@@ -21,10 +21,14 @@
             <router-link to="/formulario" active-class="active">Formulario</router-link>
           </li>
           <li>
-            <router-link :to="{name: 'pagina', params: {id: 'Soy el valor del parametro'}}" active-class="active">Página 1</router-link> <!-- Pasando un objeto. Directiva de atributo // :to="" -->
+            <router-link to="/peliculas" active-class="active">Peliculas</router-link>
           </li>
           <li>
-            <router-link to="/peliculas" active-class="active">Peliculas</router-link>
+            <router-link
+              :to="{name: 'pagina', params: {id: 'Soy el valor del parametro'}}"
+              active-class="active"
+            >Página</router-link>
+            <!-- Pasando un objeto. Directiva de atributo // :to="" -->
           </li>
         </ul>
       </nav>
@@ -35,6 +39,6 @@
 
 <script>
 export default {
-  name: 'HeaderComponent'
-}
+  name: "HeaderComponent"
+};
 </script>

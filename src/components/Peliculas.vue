@@ -4,25 +4,24 @@
       <section id="content">
         <h2 class="subheader">Peliculas</h2>
 
-        <div class="mis-datos" v-if="misDatos"> <!-- si existen mis datos, mostrarlos. -->
+        <div class="mis-datos" v-if="misDatos">
+          <!-- si existen mis datos, mostrarlos. -->
           <p v-html="misDatos"></p>
-          <br/>
-          {{web | mayusculas | concatenaYear('Este es el mejor año')}} <!-- filtro -->
+          <br />
+          {{web | mayusculas | concatenaYear('Este es el mejor año')}}
+          <!-- filtro -->
         </div>
 
         <div class="favorita" v-if="favorita">
           <h2>La pelicula Marcada es:</h2>
           <h2>{{favorita.title}}</h2>
-         </div> 
+        </div>
 
         <!-- Listado articulos -->
         <div id="articles">
           <!--  -->
           <div v-for="pelicula in peliculas" v-bind:key="pelicula.title">
-            <Pelicula 
-            :pelicula="pelicula"
-            @favorita="haLlegadoLaPeliculaFavorita"
-            ></Pelicula>
+            <Pelicula :pelicula="pelicula" @favorita="haLlegadoLaPeliculaFavorita"></Pelicula>
             <!-- variable pelicula que recorre el for se pasa a la prop y se recibie en Pelicula.vue. Con v-bind se sacan los objetos, sin los : seria un string -->
           </div>
         </div>
@@ -55,29 +54,36 @@ export default {
       return value.toUpperCase();
     },
     concatenaYear(value, message) {
-      var date = new Date();
-      return value + ' ' + date.getFullYear() + ' ' + message;
+      let date = new Date();
+      return value + " " + date.getFullYear() + " " + message;
     }
   },
   computed: {
     peliculasMayuscula() {
-    var peliculasMod = this.peliculas; 
-      for(var i = 0; i < this.peliculas.length; i++) {
+      let peliculasMod = this.peliculas;
+      for (let i = 0; i < this.peliculas.length; i++) {
         peliculasMod[i].title = peliculasMod[i].title.toUpperCase();
       }
       return peliculasMod;
     },
     misDatos() {
-      return this.nombre + ' ' + this.apellido + '<br/>' + '<strong>Sitio web:</strong> ' + this.web;
+      return (
+        this.nombre +
+        " " +
+        this.apellido +
+        "<br/>" +
+        "<strong>Sitio web:</strong> " +
+        this.web
+      );
     }
   },
   data() {
     return {
-      nombre: 'Damian',
-      apellido: 'Vigo',
-      web: 'https://damiandanielvigo.com',
+      nombre: "Damian",
+      apellido: "Vigo",
+      web: "https://damianvigo.com",
       favorita: null,
-      
+
       peliculas: [
         {
           title: "Gladiador",

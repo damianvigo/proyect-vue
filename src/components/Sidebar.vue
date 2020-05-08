@@ -1,14 +1,15 @@
 <template>
   <aside id="sidebar">
     <div id="nav-blog" class="sidebar-item">
-      <h3>Puedes hacer esto</h3>
-      <router-link to="/crear-articulo" class="btn btn-success">Crear artículo</router-link>
+      <h3>Crear Artículo</h3>
+      <router-link to="/crear-articulo" class="btn btn-success">Comienza</router-link>
     </div>
     <div id="search" class="sidebar-item">
-      <h3>Buscador</h3>
-      <p>Encuentra el artículo que buscas</p>
+      <h3>Descubre</h3>
+      <p>Encuentra tu artículo</p>
       <form @submit.prevent="goSearch">
-        <input type="text" name="search" v-model="searchString"/> <!-- vinculando la propiedad searchString con el metodo goSearch -->
+        <input type="text" name="search" v-model="searchString" />
+        <!-- vinculando la propiedad searchString con el metodo goSearch -->
         <input type="submit" name="submit" value="Buscar" class="btn" />
       </form>
     </div>
@@ -21,11 +22,11 @@ export default {
   data() {
     return {
       searchString: null
-    }
+    };
   },
   methods: {
     goSearch() {
-      this.$router.push('/redirect/' + this.searchString) /* redireción */
+      this.$router.push("/redirect/" + this.searchString); /* redireción */
     }
   }
 };

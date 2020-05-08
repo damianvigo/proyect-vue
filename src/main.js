@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import App from './App.vue';
 import VueRouter from 'vue-router';
 import Vuelidate from 'vuelidate';
 import LastArticles from './components/LastArticles.vue';
@@ -16,7 +16,7 @@ import Article from './components/Article.vue';
 import CreateArticle from './components/CreateArticle.vue';
 import EditArticle from './components/EditArticle.vue';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
 Vue.use(Vuelidate);
@@ -25,33 +25,34 @@ const moment = require('moment');
 require('moment/locale/es');
 
 Vue.use(require('vue-moment'), {
-  moment
+  moment,
 });
 
 const routes = [
-  {path: '/home', component: LastArticles},
-  {path: '/blog', component: Blog},
-  {path: '/articulo/:id', name: 'article', component: Article},
-  {path: '/editar/:id', name: 'edit', component: EditArticle},
-  {path: '/crear-articulo', name: 'create', component: CreateArticle},
-  {path: '/formulario', component: Formulario},
-  {path: '/pagina/:id?', name: 'pagina', component: Pagina},
-  {path: '/peliculas', name: 'peliculas', component: Peliculas},
-  {path: '/ultimos-articulos', component: LastArticles},
-  {path: '/buscador/:searchString', component: Search},
-  {path: '/redirect/:searchString', component: Redirect},
-  {path: '/mi-componente', component: MiComponente},
-  {path: '/hola-mundo', component: HelloWorld},
-  {path: '/', component: LastArticles},
-  {path: '*', component: ErrorComponent} // el asterisco indica que no existe la url que se quiere acceder.
+  { path: '/home', component: LastArticles },
+  { path: '/blog', component: Blog },
+  { path: '/articulo/:id', name: 'article', component: Article },
+  { path: '/editar/:id', name: 'edit', component: EditArticle },
+  { path: '/crear-articulo', name: 'create', component: CreateArticle },
+  { path: '/formulario', component: Formulario },
+  { path: '/pagina/:id?', name: 'pagina', component: Pagina },
+  { path: '/peliculas', name: 'peliculas', component: Peliculas },
+  { path: '/ultimos-articulos', component: LastArticles },
+  { path: '/buscador/:searchString', component: Search },
+  { path: '/redirect/:searchString', component: Redirect },
+  { path: '/mi-componente', component: MiComponente },
+  { path: '/hola-mundo', component: HelloWorld },
+  { path: '/', component: LastArticles },
+  { path: '*', component: ErrorComponent },
 ];
 
-const router = new VueRouter({ // objeto del VueRouter
-  routes, 
-  mode: 'history'
-})
+const router = new VueRouter({
+  // objeto del VueRouter
+  routes,
+  mode: 'history',
+});
 
 new Vue({
   router, // dar de alta en la instancia de Vue
-  render: h => h(App),
-}).$mount('#app')
+  render: (h) => h(App),
+}).$mount('#app');
