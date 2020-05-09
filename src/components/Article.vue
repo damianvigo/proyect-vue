@@ -45,13 +45,12 @@ export default {
     };
   },
   mounted() {
-    var articleId = this.$route.params.id;
+    let articleId = this.$route.params.id;
     this.getArticle(articleId);
   },
   methods: {
     getArticle(articleId) {
-      axios.get(this.url + "article/" + articleId)
-           .then(res => {
+      axios.get(this.url + "article/" + articleId).then(res => {
         if (res.data.status == "success") {
           this.article = res.data.article;
         }
@@ -60,20 +59,19 @@ export default {
     deleteArticle(articleId) {
       swal({
         title: "¿Estás seguro de querer borrar el artículo?",
-        text:
-          "Si lo borras no podrás recuperarlo",
+        text: "Si lo borras no podrás recuperarlo",
         icon: "warning",
         buttons: true,
         dangerMode: true
       }).then(willDelete => {
         if (willDelete) {
-          axios.delete(this.url + "article/" + articleId)
-            swal(
-              "Artículo borrado",
-              "El artículo se ha borrado correctamente",
-              "success"
-            );
-            this.$router.push("/blog");
+          axios.delete(this.url + "article/" + articleId);
+          swal(
+            "Artículo borrado",
+            "El artículo se ha borrado correctamente",
+            "success"
+          );
+          this.$router.push("/blog");
         } else {
           swal("No se ha borrado nada");
         }
